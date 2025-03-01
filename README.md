@@ -187,5 +187,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 **Made with ❤️ by [Soompa911](https://github.com/Soompa911)**
 
 </div>
-
-> **Note**: This project is under active development. For issues or suggestions, please create a new issue in the repository.
