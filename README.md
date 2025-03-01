@@ -5,20 +5,6 @@
 ![Language](https://img.shields.io/badge/Language-Java-orange)
 ![Database](https://img.shields.io/badge/Database-PostgreSQL-blue)
 
-<div align="center">
-
-```ascii
-+------------------------+
-|      Welcome to        |
-| Student Registration   |
-|        System         |
-+------------------------+
-        |      |
-    [Register] [Admin]
-```
-
-</div>
-
 ## 📚 Table of Contents
 - [Overview](#-overview)
 - [Features](#-features)
