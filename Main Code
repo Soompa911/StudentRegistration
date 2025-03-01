@@ -1,18 +1,3 @@
-# 📝 Student Registration System - Code Documentation
-![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--03--01%2023:35:28%20UTC-blue)
-![Author](https://img.shields.io/badge/Author-Soompa911-green)
-
-## 📂 File Structure
-```
-src/
-└── database/
-    └── RegistrationForm.java
-```
-
-## 💻 Source Code
-
-### RegistrationForm.java
-```java
 package database;
 
 import javax.swing.*;
@@ -23,9 +8,8 @@ import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 
 public class RegistrationForm extends JFrame implements ActionListener {
-    // GUI Components
-    private JLabel nameLabel, ageLabel, sexLabel, emailLabel, academicLevelLabel, 
-            academicProgramLabel, passwordLabel, messageLabel;
+    // Define instance variables for all GUI components
+    private JLabel nameLabel, ageLabel, sexLabel, emailLabel, academicLevelLabel, academicProgramLabel, passwordLabel, messageLabel;
     private JTextField nameField, ageField, emailField;
     private JRadioButton maleRadio, femaleRadio;
     private JComboBox<String> academicLevelCombo, academicProgramCombo;
@@ -39,41 +23,41 @@ public class RegistrationForm extends JFrame implements ActionListener {
     private Connection connection;
 
     public RegistrationForm() {
-        // Frame Setup
+        // Set up the frame
         setTitle("Registration Form");
         setSize(900, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(8, 2));
         setLocationRelativeTo(null);
-        
-        // Initialize Table
         studentTable = new JTable();
         studentTable.setModel(new DefaultTableModel(
                 new Object[][] {},
-                new String[] {"Name", "Age", "Sex", "Email Address", 
-                             "Academic Level", "Academic Program"}));
+                new String[] {"Name", "Age", "Sex", "Email Address", "Academic Level", "Academic Program"}));
 
-        // Setup Components and Database
+        // Add GUI components
         addComponents();
+
+        // Establish database connection
         connectToDatabase();
+
+        // Load existing student data into the table
         populateTable();
+
+        // Show the frame
         setVisible(true);
     }
 
     private void addComponents() {
-        // Name Field
         nameLabel = new JLabel("     Name:");
         add(nameLabel);
         nameField = new JTextField(10);
         add(nameField);
 
-        // Age Field
         ageLabel = new JLabel("     Age:");
         add(ageLabel);
         ageField = new JTextField(10);
         add(ageField);
 
-        // Sex Selection
         sexLabel = new JLabel("     Sex:");
         add(sexLabel);
         maleRadio = new JRadioButton("Male");
@@ -86,33 +70,27 @@ public class RegistrationForm extends JFrame implements ActionListener {
         sexPanel.add(femaleRadio);
         add(sexPanel);
 
-        // Email Field
         emailLabel = new JLabel("     Email:");
         add(emailLabel);
         emailField = new JTextField();
         add(emailField);
 
-        // Academic Level Selection
         academicLevelLabel = new JLabel("     Academic Level:");
         add(academicLevelLabel);
-        String[] academicLevels = {null, "Grade 11", "Grade 12", 
-                                  "Under-Graduate Studies", "Graduate Studies"};
+        String[] academicLevels = {null, "Grade 11", "Grade 12", "Under-Graduate Studies", "Graduate Studies"};
         academicLevelCombo = new JComboBox<>(academicLevels);
         academicLevelCombo.addActionListener(this);
         add(academicLevelCombo);
 
-        // Academic Program Selection
         academicProgramLabel = new JLabel("     Academic Program:");
         add(academicProgramLabel);
         String[] gradePrograms = {null, "ICT", "STEM", "ABM", "HUMSS", "GAS"};
         academicProgramCombo = new JComboBox<>(gradePrograms);
         add(academicProgramCombo);
 
-        // Consent Checkbox
         consentCheckbox = new JCheckBox("I consent to register in the school");
         add(consentCheckbox);
 
-        // Buttons
         nextButton = new JButton("NEXT");
         nextButton.addActionListener(this);
         add(nextButton);
@@ -135,8 +113,6 @@ public class RegistrationForm extends JFrame implements ActionListener {
         passwordFrame.setSize(300, 200);
         passwordFrame.setDefaultCloseOperation(HIDE_ON_CLOSE);
         passwordFrame.setLocationRelativeTo(null);
-        
-        // Admin Login Components
         passwordLabel = new JLabel("Password:");
         messageLabel = new JLabel();
         adminPassword = new JPasswordField(20);
@@ -152,11 +128,9 @@ public class RegistrationForm extends JFrame implements ActionListener {
             }
         });
 
-        // Back Button
         backButton = new JButton("BACK");
         backButton.addActionListener(e -> passwordFrame.dispose());
 
-        // Layout
         JPanel passwordPane = new JPanel(new FlowLayout());
         passwordPane.add(passwordLabel);
         passwordPane.add(adminPassword);
@@ -179,7 +153,7 @@ public class RegistrationForm extends JFrame implements ActionListener {
         JButton adminBack = new JButton("BACK");
         adminBack.addActionListener(e -> {
             adminFrame.dispose();
-            adminButton.setEnabled(true);
+            adminButton.setEnabled(true); // Re-enable the admin button when the admin frame is closed
         });
 
         JPanel adminPanel = new JPanel(new FlowLayout());
@@ -210,9 +184,7 @@ public class RegistrationForm extends JFrame implements ActionListener {
                 programs = new String[]{"BSCpE", "BSCE", "BSECE", "BSME", "BSEE", "BSSA"};
                 break;
             case "Graduate Studies":
-                programs = new String[]{"Master's in CpE", "Master's in CE", 
-                                      "Master's in ECE", "Master's in ME", 
-                                      "Master's in EE", "Master's in SA"};
+                programs = new String[]{"Master’s in CpE", "Master’s in CE", "Master’s in ECE", "Master’s in ME", "Master’s in EE", "Master’s in SA"};
                 break;
             default:
                 programs = new String[]{null};
@@ -221,14 +193,12 @@ public class RegistrationForm extends JFrame implements ActionListener {
     }
 
     private void registerStudent() {
-        // Get form data
         String name = nameField.getText();
         String ageString = ageField.getText();
         try {
             age = Integer.parseInt(ageString);
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid age.", 
-                                        "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please enter a valid age.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -238,16 +208,12 @@ public class RegistrationForm extends JFrame implements ActionListener {
         String academicProgram = (String) academicProgramCombo.getSelectedItem();
         boolean consent = consentCheckbox.isSelected();
 
-        // Validation
-        if (name.isEmpty() || ageString.isEmpty() || email.isEmpty() || 
-            academicLevel == null || academicProgram == null || !consent) {
-            JOptionPane.showMessageDialog(this, 
-                "Please fill out all required fields and consent to register in the school.", 
-                "Error", JOptionPane.ERROR_MESSAGE);
+        if (name.isEmpty() || ageString.isEmpty() || email.isEmpty() || academicLevel == null || academicProgram == null || !consent) {
+            JOptionPane.showMessageDialog(this, "Please fill out all required fields and consent to register in the school.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        // Confirmation dialog
+        // Show confirmation dialog with student details
         int confirmation = JOptionPane.showConfirmDialog(this, 
             "Please confirm your details:\n" +
             "Name: " + name + "\n" +
@@ -259,10 +225,9 @@ public class RegistrationForm extends JFrame implements ActionListener {
             "Confirm Registration", JOptionPane.YES_NO_OPTION);
 
         if (confirmation == JOptionPane.YES_OPTION) {
-            // Database registration
+            // Proceed to register the student in the database
             try {
-                String sql = "INSERT INTO students (name, age, sex, email, academic_level, academic_program) " +
-                           "VALUES (?, ?, ?, ?, ?, ?)";
+                String sql = "INSERT INTO students (name, age, sex, email, academic_level, academic_program) VALUES (?, ?, ?, ?, ?, ?)";
                 PreparedStatement pstmt = connection.prepareStatement(sql);
                 pstmt.setString(1, name);
                 pstmt.setInt(2, age);
@@ -273,17 +238,15 @@ public class RegistrationForm extends JFrame implements ActionListener {
                 pstmt.executeUpdate();
 
                 populateTable();
-                JOptionPane.showMessageDialog(this, 
-                    "You have successfully registered in this School");
+                JOptionPane.showMessageDialog(this, "You have successfully registered in this School");
 
                 clearFields();
             } catch (SQLException e) {
                 e.printStackTrace();
-                JOptionPane.showMessageDialog(this, 
-                    "Error registering student: " + e.getMessage(), 
-                    "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Error registering student: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         } else {
+            // If the user clicks "No", just return without registering
             JOptionPane.showMessageDialog(this, "Registration canceled.");
         }
     }
@@ -300,21 +263,20 @@ public class RegistrationForm extends JFrame implements ActionListener {
 
     private void connectToDatabase() {
         try {
+            // Replace with your database connection details
             String url = "jdbc:postgresql://public.johnpaul:5432/postgres";
             String username = "postgres";
             String password = "johnpaul";
             connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, 
-                "Error connecting to the database: " + e.getMessage(), 
-                "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Error connecting to the database: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) studentTable.getModel();
-        model.setRowCount(0); // Clear existing data
+        model.setRowCount(0); // Clear the table before repopulating
 
         try {
             Statement stmt = connection.createStatement();
@@ -327,14 +289,11 @@ public class RegistrationForm extends JFrame implements ActionListener {
                 String academicLevel = rs.getString("academic_level");
                 String academicProgram = rs.getString("academic_program");
 
-                model.addRow(new Object[]{name, age, sex, email, 
-                                        academicLevel, academicProgram});
+                model.addRow(new Object[]{name, age, sex, email, academicLevel, academicProgram});
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, 
-                "Error retrieving student data: " + e.getMessage(), 
-                "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Error retrieving student data: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -352,75 +311,3 @@ public class RegistrationForm extends JFrame implements ActionListener {
         SwingUtilities.invokeLater(RegistrationForm::new);
     }
 }
-```
-
-## 🔍 Code Structure Breakdown
-
-### 1. Class Components
-- **Main Class**: `RegistrationForm` extends `JFrame` and implements `ActionListener`
-- **GUI Components**: Various Swing components for user interface
-- **Database Connection**: PostgreSQL connection management
-
-### 2. Key Methods
-
-#### GUI Methods
-- `addComponents()`: Sets up all GUI elements
-- `showAdminLogin()`: Creates admin login dialog
-- `showAdminFrame()`: Displays admin dashboard
-- `handleAcademicLevelChange()`: Updates program options based on academic level
-
-#### Database Methods
-- `connectToDatabase()`: Establishes database connection
-- `populateTable()`: Loads student data into table
-- `closeConnection()`: Safely closes database connection
-
-#### Business Logic
-- `registerStudent()`: Handles student registration process
-- `clearFields()`: Resets form after successful registration
-
-### 3. Features Implementation
-
-#### Academic Programs
-```java
-switch (selectedLevel) {
-    case "Grade 11":
-    case "Grade 12":
-        programs = new String[]{"ICT", "STEM", "ABM", "HUMSS", "GAS"};
-        break;
-    case "Under-Graduate Studies":
-        programs = new String[]{"BSCpE", "BSCE", "BSECE", "BSME", "BSEE", "BSSA"};
-        break;
-    case "Graduate Studies":
-        programs = new String[]{"Master's in CpE", "Master's in CE", 
-                              "Master's in ECE", "Master's in ME", 
-                              "Master's in EE", "Master's in SA"};
-        break;
-}
-```
-
-#### Database Schema
-```sql
-CREATE TABLE students (
-    name VARCHAR(100),
-    age INTEGER,
-    sex VARCHAR(10),
-    email VARCHAR(100),
-    academic_level VARCHAR(50),
-    academic_program VARCHAR(50)
-);
-```
-
-## 📝 Notes
-- The code uses a simple password authentication system that should be enhanced for production
-- Database credentials are hardcoded and should be moved to a configuration file
-- Input validation could be strengthened
-- Consider adding logging for better debugging
-
----
-
-<div align="center">
-
-**Documentation Generated: 2025-03-01 23:35:28 UTC**  
-**Author: [Soompa911](https://github.com/Soompa911)**
-
-</div>
