@@ -2,7 +2,7 @@
 
 ![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--03--01%2023:28:25%20UTC-blue)
 ![Author](https://img.shields.io/badge/Author-Soompa911-green)
-![Status](https://img.shields.io/badge/Status-Active-success)
+![Status](https://img.shields.io/badge/Status-Done-success)
 ![Language](https://img.shields.io/badge/Language-Java-orange)
 ![Database](https://img.shields.io/badge/Database-PostgreSQL-blue)
 
