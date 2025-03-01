@@ -1,8 +1,7 @@
 # 🎓 Student Registration System
-
-![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--03--01%2023:28:25%20UTC-blue)
+![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--03--01%2023:49:28%20UTC-blue)
 ![Author](https://img.shields.io/badge/Author-Soompa911-green)
-![Status](https://img.shields.io/badge/Status-Done-success)
+![Status](https://img.shields.io/badge/Status-Active-success)
 ![Language](https://img.shields.io/badge/Language-Java-orange)
 ![Database](https://img.shields.io/badge/Database-PostgreSQL-blue)
 
@@ -23,28 +22,26 @@
 ## 📚 Table of Contents
 - [Overview](#-overview)
 - [Features](#-features)
-- [Technology Stack](#-technology-stack)
 - [System Architecture](#-system-architecture)
 - [Installation](#-installation)
 - [Usage Guide](#-usage-guide)
-- [Database Schema](#-database-schema)
 - [Security Features](#-security-features)
 - [Future Enhancements](#-future-enhancements)
 - [Contributing](#-contributing)
 
 ## 🌟 Overview
-A comprehensive Java-based Student Registration System featuring a user-friendly Swing GUI interface and PostgreSQL database integration. Designed to streamline the student registration process across multiple academic levels with real-time program selection and administrative oversight.
+A comprehensive Java-based Student Registration System featuring a user-friendly Swing GUI interface and PostgreSQL database integration. This system streamlines the student registration process across multiple academic levels with real-time program selection and administrative oversight.
 
 ## 🚀 Features
 
-### 🎯 Core Functionality
+### Core Functionality
 - **Student Registration Form**
   - Personal Information Capture
   - Academic Level Selection
   - Dynamic Program Assignment
   - Consent Management
 
-### 📊 Academic Programs
+### Academic Programs
 
 <details>
 <summary>Senior High School (Grades 11-12)</summary>
@@ -79,96 +76,68 @@ A comprehensive Java-based Student Registration System featuring a user-friendly
   - System Administration
 </details>
 
-## 💻 Technology Stack
-```mermaid
-graph TD
-    A[Java] --> B[Swing GUI]
-    A --> C[JDBC]
-    C --> D[PostgreSQL]
-    B --> E[User Interface]
-    E --> F[Registration Form]
-    E --> G[Admin Panel]
-```
-
 ## 🏗 System Architecture
 ```
 StudentRegistration/
 ├── src/
 │   └── database/
+│       ├── ConnectDB.java
 │       └── RegistrationForm.java
 ├── lib/
 │   └── postgresql-jdbc.jar
 ├── docs/
-│   └── README.md
-└── database/
-    └── schema.sql
+│   └── SOURCE_CODE.md
+└── README.md
 ```
 
 ## 🔧 Installation
 
-1. **Database Setup**
-```sql
-CREATE TABLE students (
-    name VARCHAR(100),
-    age INTEGER,
-    sex VARCHAR(10),
-    email VARCHAR(100),
-    academic_level VARCHAR(50),
-    academic_program VARCHAR(50)
-);
-```
+### Prerequisites
+- Java Development Kit (JDK) 8 or higher
+- PostgreSQL 9.6 or higher
+- PostgreSQL JDBC Driver
+- Minimum 2GB RAM
+- 100MB free disk space
 
-2. **Configuration**
-```properties
-DB_HOST=public.johnpaul
-DB_PORT=5432
-DB_NAME=postgres
-DB_USER=postgres
-DB_PASS=johnpaul
-```
+### Database Setup
+1. Install PostgreSQL
+2. Create database and table
+3. Configure connection settings
 
-3. **Compilation & Execution**
-```bash
-javac RegistrationForm.java
-java RegistrationForm
-```
+### Application Setup
+1. Clone the repository
+   ```bash
+   git clone https://github.com/Soompa911/StudentRegistration.git
+   ```
+2. Configure database connection in `ConnectDB.java`
+3. Compile the source code
+4. Run the application
 
 ## 📖 Usage Guide
 
-### 👨‍🎓 Student Registration
+### Student Registration Process
 1. Launch the application
-2. Fill in personal details
+2. Fill in personal details:
+   - Name
+   - Age
+   - Sex
+   - Email
 3. Select academic level
 4. Choose appropriate program
-5. Confirm registration
+5. Accept the consent checkbox
+6. Click "NEXT" to submit
 
-### 👨‍💼 Administrative Access
+### Administrative Access
 1. Click "ADMIN LOG-IN"
-2. Enter credentials
-   ```
-   Default Password: password
-   ```
-3. View student records
-4. Manage registrations
-
-## 🗄 Database Schema
-```mermaid
-erDiagram
-    STUDENTS {
-        string name
-        int age
-        string sex
-        string email
-        string academic_level
-        string academic_program
-    }
-```
+2. Enter default password: `password`
+3. View and manage student records
+4. Use "BACK" to return to main form
 
 ## 🔐 Security Features
-- ✅ Password-protected admin access
-- ✅ Input validation
-- ✅ Data integrity checks
-- ✅ Consent verification
+- Password-protected admin access
+- Input validation
+- Data integrity checks
+- Consent verification
 
 ## 🚀 Future Enhancements
 - [ ] Implement password hashing
@@ -176,14 +145,24 @@ erDiagram
 - [ ] Create student dashboard
 - [ ] Enable bulk registration
 - [ ] Add reporting features
+- [ ] Implement connection pooling
+- [ ] Add user session management
+- [ ] Create backup and restore functionality
 
 ## 🤝 Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+Please read [SOURCE_CODE.md](docs/SOURCE_CODE.md) for detailed code documentation.
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by [Soompa911](https://github.com/Soompa911)**
+**Made with ❤️ by [Soompa911](https://github.com/Soompa911)**  
+Last Updated: 2025-03-01 23:49:28 UTC
 
 </div>
