@@ -1,6 +1,6 @@
 # 🎓 Student Registration System
 ![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--03--02%2000:00:23%20UTC-blue)
-![Author](https://img.shields.io/badge/Author-Soompa911-green)
+![Author](https://img.shields.io/badge/Author-jhnplsrno-green)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 ![Language](https://img.shields.io/badge/Language-Java-orange)
 ![Database](https://img.shields.io/badge/Database-PostgreSQL-blue)
@@ -21,9 +21,9 @@ A comprehensive Java-based Student Registration System featuring a user-friendly
 
 ## 💻 Source Code Documentation
 The complete source code documentation is available in the following files:
-- [Main Registration System Code](https://github.com/Soompa911/StudentRegistration/blob/main/MAINCODE.md)
-- [SQL Table Creation](https://github.com/Soompa911/StudentRegistration/blob/main/SQL_TABLECREATION.md)
-- [Database Connection](https://github.com/Soompa911/StudentRegistration/blob/main/DATABASE_CONNECT.md)
+- [Main Registration System Code](https://github.com/jhnplsrno/StudentRegistration/blob/main/MAINCODE.md)
+- [SQL Table Creation](https://github.com/jhnplsrno/StudentRegistration/blob/main/SQL_TABLECREATION.md)
+- [Database Connection](https://github.com/jhnplsrno/StudentRegistration/blob/main/DATABASE_CONNECT.md)
 
 ## 🚀 Features
 
@@ -101,7 +101,7 @@ StudentRegistration/
 ### Application Setup
 1. Clone the repository
    ```bash
-   git clone https://github.com/Soompa911/StudentRegistration.git
+   git clone https://github.com/jhnplsrno/StudentRegistration.git
    ```
 2. Configure database connection in `ConnectDB.java`
 3. Create database tables using `sqlTable.java`
@@ -156,7 +156,7 @@ For detailed implementation information, please refer to the source code documen
 
 <div align="center">
 
-**Made with ❤️ by [Soompa911](https://github.com/Soompa911)**  
+**Made with ❤️ by [jhnplsrno](https://github.com/jhnplsrno)**  
 Last Updated: 2025-03-02 00:00:23 UTC
 
 </div>
