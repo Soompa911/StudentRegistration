@@ -1,6 +1,6 @@
 # 🗄️ SQL Table Documentation
 ![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--03--02%2000:10:16%20UTC-blue)
-![Author](https://img.shields.io/badge/Author-Soompa911-green)
+![Author](https://img.shields.io/badge/Author-jhnplsrno-green)
 ![Database](https://img.shields.io/badge/Database-PostgreSQL-blue)
 
 ## CreateTable.java
@@ -157,6 +157,6 @@ ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 <div align="center">
 
 **Last Updated: 2025-03-02 00:10:16 UTC**  
-**Documentation by: [Soompa911](https://github.com/Soompa911)**
+**Documentation by: [jhnplsrno](https://github.com/jhnplsrno)**
 
 </div>
