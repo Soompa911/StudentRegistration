@@ -1,7 +1,7 @@
 
 # 🔌 Database Connection Documentation
 ![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--03--01%2023:55:24%20UTC-blue)
-![Author](https://img.shields.io/badge/Author-Soompa911-green)
+![Author](https://img.shields.io/badge/Author-jhnplsrno-green)
 ![Database](https://img.shields.io/badge/Database-PostgreSQL-blue)
 
 ## ConnectDB.java
@@ -190,7 +190,6 @@ public class ConnectionPool {
 
 <div align="center">
 
-**Last Updated: 2025-03-01 23:55:24 UTC**  
-**Documentation by: [Soompa911](https://github.com/Soompa911)**
+**Documentation by: [jhnplsrno](https://github.com/jhnplsrno)**
 
 </div>
