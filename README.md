@@ -1,5 +1,5 @@
 # 🎓 Student Registration System
-![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--03--01%2023:49:28%20UTC-blue)
+![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--03--02%2000:00:23%20UTC-blue)
 ![Author](https://img.shields.io/badge/Author-Soompa911-green)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 ![Language](https://img.shields.io/badge/Language-Java-orange)
@@ -9,6 +9,7 @@
 - [Overview](#-overview)
 - [Features](#-features)
 - [System Architecture](#-system-architecture)
+- [Source Code Documentation](#-source-code-documentation)
 - [Installation](#-installation)
 - [Usage Guide](#-usage-guide)
 - [Security Features](#-security-features)
@@ -17,6 +18,12 @@
 
 ## 🌟 Overview
 A comprehensive Java-based Student Registration System featuring a user-friendly Swing GUI interface and PostgreSQL database integration. This system streamlines the student registration process across multiple academic levels with real-time program selection and administrative oversight.
+
+## 💻 Source Code Documentation
+The complete source code documentation is available in the following files:
+- [Main Registration System Code](https://github.com/Soompa911/StudentRegistration/blob/main/MAINCODE.md)
+- [SQL Table Creation](https://github.com/Soompa911/StudentRegistration/blob/main/SQL_TABLECREATION.md)
+- [Database Connection](https://github.com/Soompa911/StudentRegistration/blob/main/DATABASE_CONNECT.md)
 
 ## 🚀 Features
 
@@ -68,11 +75,12 @@ StudentRegistration/
 ├── src/
 │   └── database/
 │       ├── ConnectDB.java
-│       └── RegistrationForm.java
-├── lib/
-│   └── postgresql-jdbc.jar
+│       ├── RegistrationForm.java
+│       └── sqlTable.java
 ├── docs/
-│   └── SOURCE_CODE.md
+│   ├── MAINCODE.md
+│   ├── SQL_TABLECREATION.md
+│   └── DATABASE_CONNECT.md
 └── README.md
 ```
 
@@ -96,8 +104,8 @@ StudentRegistration/
    git clone https://github.com/Soompa911/StudentRegistration.git
    ```
 2. Configure database connection in `ConnectDB.java`
-3. Compile the source code
-4. Run the application
+3. Create database tables using `sqlTable.java`
+4. Compile and run `RegistrationForm.java`
 
 ## 📖 Usage Guide
 
@@ -142,13 +150,13 @@ StudentRegistration/
 4. Push to the branch
 5. Open a Pull Request
 
-Please read [SOURCE_CODE.md](docs/SOURCE_CODE.md) for detailed code documentation.
+For detailed implementation information, please refer to the source code documentation linked above.
 
 ---
 
 <div align="center">
 
 **Made with ❤️ by [Soompa911](https://github.com/Soompa911)**  
-Last Updated: 2025-03-01 23:49:28 UTC
+Last Updated: 2025-03-02 00:00:23 UTC
 
 </div>
