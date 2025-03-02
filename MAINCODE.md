@@ -1,6 +1,6 @@
 # 📝 Source Code Documentation
 ![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--03--01%2023:52:32%20UTC-blue)
-![Author](https://img.shields.io/badge/Author-Soompa911-green)
+![Author](https://img.shields.io/badge/Author-jhnplsrno-green)
 
 ## RegistrationForm.java
 
@@ -460,7 +460,6 @@ public static void main(String[] args) {
 
 <div align="center">
 
-**Last Updated: 2025-03-01 23:52:32 UTC**  
-**Documentation by: [Soompa911](https://github.com/Soompa911)**
+**Documentation by: [jhnplsrno](https://github.com/jhnplsrno)**
 
 </div>
